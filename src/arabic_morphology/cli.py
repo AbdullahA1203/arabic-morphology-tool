@@ -1,4 +1,12 @@
 
 
 def main():
-    print("Entry Point")
+
+    
+    print("--- Arabic Morphology Tool ---")
+
+    while(True):
+
+        letters = input("Enter the root letters: ")
+
+        pass

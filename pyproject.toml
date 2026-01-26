@@ -10,7 +10,9 @@ requires-python = ">=3.8"
 
 dependencies = [
     "python-dotenv",
-    "pydantic"
+    "pydantic",
+    "openai",
+
 ]
 
 [project.scripts]

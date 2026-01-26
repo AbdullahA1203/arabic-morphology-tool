@@ -1,4 +1,5 @@
 from .morphology import *
+from .exporter import *
 
 cards = []
 
@@ -23,3 +24,5 @@ def main():
             cards.append(forms)
 
             print(forms)
+
+    write_to_sheet(cards)

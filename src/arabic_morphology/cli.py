@@ -1,5 +1,7 @@
 from .morphology import *
 
+cards = []
+
 def main():
 
     
@@ -11,6 +13,9 @@ def main():
 
         forms = generate_card(letters)
 
+        cards.append(forms)
+
         print(forms)
+
 
         pass

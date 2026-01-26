@@ -9,4 +9,8 @@ def main():
 
         letters = input("Enter the root letters: ")
 
+        forms = generate_card(letters)
+
+        print(forms)
+
         pass

@@ -9,13 +9,17 @@ def main():
 
     while(True):
 
-        letters = input("Enter the root letters: ")
+        letters = input("Enter the root letters (w to write to file): ")
 
-        forms = generate_card(letters)
+        if (letters == "w"):
 
-        cards.append(forms)
+            break
 
-        print(forms)
+        else:
 
 
-        pass
+            forms = generate_card(letters)
+
+            cards.append(forms)
+
+            print(forms)

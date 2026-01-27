@@ -1,9 +1,11 @@
 from pydantic import BaseModel
 from openai import OpenAI
-
 import os
 
+
 class FlashCard(BaseModel):
+    """ Represents a single flashcard generated from Arabic root letters """
+
     front: str
     back: str
 
@@ -21,6 +23,8 @@ content_prompt = """
 """
 
 def generate_card(root_letters):
+    """ Calls OpenAI API, sending the root letters and returning the flashcard data """
+
     response = client.responses.parse(
         model="gpt-5",
         input=[
@@ -34,5 +38,6 @@ def generate_card(root_letters):
         text_format=FlashCard,
     )
 
+    # Returning the structured object
     return response.output_parsed
 

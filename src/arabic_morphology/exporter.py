@@ -3,6 +3,7 @@ import os
 
 
 def write_to_sheet(cards):
+    """ Creates a spreadsheet and populates it with generated flashcards """
 
     row = 0
 

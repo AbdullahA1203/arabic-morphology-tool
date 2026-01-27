@@ -1,10 +1,11 @@
 from .morphology import *
 from .exporter import *
 
-cards = []
 
 def main():
     """ Entry point for the command-line interface """
+
+    cards = []
     
     print("--- Arabic Morphology Tool ---")
 

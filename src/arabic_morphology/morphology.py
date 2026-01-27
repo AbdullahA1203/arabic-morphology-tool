@@ -3,6 +3,10 @@ from openai import OpenAI
 
 import os
 
+class FlashCard(BaseModel):
+    front: str
+    back: str
+
 OPEN_AI_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=OPEN_AI_KEY)
@@ -15,10 +19,6 @@ content_prompt = """
     Then a new line: الجذر: <letters separated by spaces>
     Example back format: ذَهَبَ / يَذْهَبُ / اِذْهَبْ / ذَهَاب
 """
-
-class FlashCard(BaseModel):
-    front: str
-    back: str
 
 def generate_card(root_letters):
     response = client.responses.parse(

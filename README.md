@@ -23,4 +23,4 @@ A Python tool that generates related Arabic word forms from root letters to supp
 
 ## License
 
-[MIT © Abdullah Ahmad.](../LICENSE)
+[MIT © Abdullah Ahmad.](LICENSE)

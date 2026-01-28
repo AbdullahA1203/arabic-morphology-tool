@@ -2,8 +2,11 @@ from .morphology import *
 from .exporter import *
 import typer
 
-def main():
-    """ Entry point for the command-line interface """
+app = typer.Typer()
+
+@app.command()
+def interactive():
+    """ Interactive mode """
 
     cards = []
     
@@ -11,9 +14,9 @@ def main():
 
     while(True):
 
-        letters = input("Enter the root letters (w to write to file): ")
+        letters = typer.prompt("Enter the root letters (w to write to file): ")
 
-        if (letters == "w"):
+        if (letters.lower() == "exit"):
             break
 
         else:
@@ -24,3 +27,9 @@ def main():
             print(forms)
 
     write_to_sheet(cards)
+
+@app.command()
+def exit():
+    """ Exit the application """
+
+    raise typer.Exit()

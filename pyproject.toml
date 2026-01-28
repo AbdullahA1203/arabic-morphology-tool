@@ -12,7 +12,8 @@ dependencies = [
     "python-dotenv",
     "pydantic",
     "openai",
-    "xlsxwriter"
+    "xlsxwriter",
+    "typer"
 
 ]
 

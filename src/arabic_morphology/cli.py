@@ -1,6 +1,6 @@
 from .morphology import *
 from .exporter import *
-
+import typer
 
 def main():
     """ Entry point for the command-line interface """

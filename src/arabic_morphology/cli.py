@@ -5,7 +5,34 @@ import typer
 app = typer.Typer()
 
 @app.command()
-def interactive():
+def generate(
+     root: str = typer.Argument(
+        None,
+        help="Arabic root letters"
+    ),
+    interactive: bool = typer.Option(
+        False,
+        help="Run in interactive mode"
+    ),
+):
+    """ Command to generate flashcards """
+
+    if interactive:
+        run_interactive()
+        return
+
+    if not root:
+        raise typer.BadParameter("Root is required unless --interactive is used.")
+    
+    card = generate_card(root)
+
+    print(card)
+
+
+
+
+
+def run_interactive():
     """ Interactive mode """
 
     cards = []

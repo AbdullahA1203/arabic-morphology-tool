@@ -1,6 +1,6 @@
 # arabic-morphology-tool
 
-A Python tool that generates flashcards of related Arabic word forms from root letters to support language learning.
+A Python tool for generating Arabic word-form flashcards from root letters to support language learning.
 
 ## Table of Contents
 

@@ -14,6 +14,7 @@ def generate(
         False,
         help="Run in interactive mode"
     ),
+    card_type: str = typer.Option(False, "--type", "-t"),
 ):
     """ Command to generate flashcards """
 
@@ -24,7 +25,15 @@ def generate(
     if not root:
         raise typer.BadParameter("Root is required unless --interactive is used.")
     
-    card = generate_verb_card(root)
+    
+    card = None
+
+    if card_type == "noun":
+        card = generate_noun_card(root)
+    
+    elif card_type == "verb":
+        card = generate_verb_card(root)
+    
 
     print(card)
 

@@ -59,7 +59,23 @@ python -m arabic_morphology
 
 ## Usage
 
+Show help: 
+
 ```
+arabic-morphology --help
+```
+
+Generate a verb flashcard:
+
+```
+arabic-morphology generate كتب --type verb
+```
+
+Generate a noun flashcard:
+
+```
+arabic-morphology generate كتاب --type noun
+
 ```
 
 ## License

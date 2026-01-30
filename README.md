@@ -26,7 +26,7 @@ git clone https://github.com/AbdullahA1203/arabic-morphology-tool.git
 cd arabic-morphology-tool
 ```
 
-### 2. Create and activate a virtual environment (Optional):
+### 2. Create and activate a virtual environment (optional):
 
 ```
 python -m venv venv
@@ -54,7 +54,7 @@ Do not commit this file — it should be in .gitignore.
 ### 5. Run the tool 
 
 ```
-python -m arabic_morphology
+arabic-morphology --help
 ```
 
 ## Usage
@@ -75,7 +75,6 @@ Generate a noun flashcard:
 
 ```
 arabic-morphology generate كتاب --type noun
-
 ```
 
 ## License

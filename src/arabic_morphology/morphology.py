@@ -13,8 +13,8 @@ OPEN_AI_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=OPEN_AI_KEY)
 
-content_prompt = """
-    Create ONE flashcard for the given Arabic root.
+verb_content_prompt = """
+    Create ONE verb flashcard for the given Arabic root.
     Return JSON with keys: front, back.
     front: 1–2 common English meanings.
     back: list forms exactly like: past / present / imperative / verbal-noun (omit any missing).
@@ -22,13 +22,22 @@ content_prompt = """
     Example back format: ذَهَبَ / يَذْهَبُ / اِذْهَبْ / ذَهَاب
 """
 
-def generate_card(root_letters):
-    """ Calls OpenAI API, sending the root letters and returning the flashcard data """
+noun_content_prompt = """
+    Create ONE noun flashcard for the given Arabic root.
+    Return JSON with keys: front, back.
+    front: 1–2 common English meanings.
+    back: list forms exactly like: plural / singular (omit any missing).
+    Then a new line: الجذر: <letters separated by spaces>
+    Example back format: موضوع / مواضيع
+    """
+
+def generate_verb_card(root_letters):
+    """ Calls OpenAI API, sending the root letters and returning the flashcard for the verb """
 
     response = client.responses.parse(
         model="gpt-5",
         input=[
-            {"role": "system", "content": content_prompt},
+            {"role": "system", "content": verb_content_prompt},
             {
                 "role": "user",
     
@@ -41,3 +50,22 @@ def generate_card(root_letters):
     # Returning the structured object
     return response.output_parsed
 
+
+def generate_noun_card(root_letters):
+    """ Calls OpenAI API, sending the root letters and returning the flashcard for the noun """
+
+    response = client.responses.parse(
+        model="gpt-5",
+        input=[
+            {"role": "system", "content": noun_content_prompt},
+            {
+                "role": "user",
+    
+                "content": root_letters,
+            },
+        ],
+        text_format=FlashCard,
+    )
+
+    # Returning the structured object
+    return response.output_parsed

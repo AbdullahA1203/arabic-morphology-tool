@@ -24,7 +24,7 @@ def generate(
     if not root:
         raise typer.BadParameter("Root is required unless --interactive is used.")
     
-    card = generate_card(root)
+    card = generate_verb_card(root)
 
     print(card)
 
@@ -47,7 +47,7 @@ def run_interactive():
             break
 
         else:
-            forms = generate_card(letters)
+            forms = generate_verb_card(letters)
 
             cards.append(forms)
 

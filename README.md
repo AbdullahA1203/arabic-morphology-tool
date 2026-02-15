@@ -11,6 +11,8 @@ A Python tool for generating word-form flashcards from Arabic nouns and verbs to
 
 ## Background
 
+Arabic morphology is built around manipulating root letters to form a wide range of verb and noun forms. This is powerful, however it can be challenging for learners to recognize how a given word relates to its root letters, base forms and underlying patterns, especially when encountering derived forms in real texts. Furthermore searching for the base forms given a word can become time consuming. This tool is designed to take an Arabic verb or noun and generate its core morphological forms as concise flashcards, helping learners to internalize the relation between surface forms and their base patterns. The aim of this tool is to support vocabulary building, pattern recognition and effective review for flashcard-based study workflows.
+
 ## Install
 
 ### Prerequisites

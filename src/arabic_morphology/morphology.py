@@ -14,7 +14,7 @@ OPEN_AI_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPEN_AI_KEY)
 
 verb_content_prompt = """
-    Create ONE verb flashcard for the given Arabic root.
+    Create ONE verb flashcard for the given Arabic verb.
     Return JSON with keys: front, back.
     front: 1–2 common English meanings.
     back: list forms exactly like: past / present / imperative / verbal-noun (omit any missing).
@@ -23,7 +23,7 @@ verb_content_prompt = """
 """
 
 noun_content_prompt = """
-    Create ONE noun flashcard for the given Arabic root.
+    Create ONE noun flashcard for the given Arabic noun.
     Return JSON with keys: front, back.
     front: 1–2 common English meanings.
     back: list forms exactly like: plural / singular (omit any missing).
